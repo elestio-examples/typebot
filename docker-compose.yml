@@ -1,0 +1,37 @@
+version: '3.3'
+services:
+  typebot-db:
+    image: postgres:13
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=typebot
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  typebot-builder:
+    image: baptistearno/typebot-builder:${SOFTWARE_VERSION_TAG}
+    restart: always
+    depends_on:
+      - typebot-db
+    ports:
+      - '172.17.0.1:8484:3000'
+    # extra_hosts:
+    #   - 'host.docker.internal:host-gateway'
+    # See https://docs.typebot.io/self-hosting/configuration/builder for more configuration options
+    environment:
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
+      - ENCRYPTION_SECRET=${ENCRYPTION_SECRET}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+  typebot-viewer:
+    image: baptistearno/typebot-viewer:${SOFTWARE_VERSION_TAG}
+    restart: always
+    ports:
+      - '172.17.0.1:8585:3000'
+    # See https://docs.typebot.io/self-hosting/configuration/viewer for more configuration options
+    environment:
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
+      - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
+      - ENCRYPTION_SECRET=${ENCRYPTION_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
