@@ -22,8 +22,9 @@ services:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
       - NEXTAUTH_URL=${NEXTAUTH_URL}
       - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
-      - ENCRYPTION_SECRET=${ENCRYPTION_SECRET}
+      - ENCRYPTION_SECRET=SECRET_TO_CHANGE
       - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - SMTP_HOST=${SMTP_HOST}
   typebot-viewer:
     image: baptistearno/typebot-viewer:${SOFTWARE_VERSION_TAG}
     restart: always
@@ -33,5 +34,5 @@ services:
     environment:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
       - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
-      - ENCRYPTION_SECRET=${ENCRYPTION_SECRET}
+      - ENCRYPTION_SECRET=SECRET_TO_CHANGE
       - NEXTAUTH_URL=${NEXTAUTH_URL}
