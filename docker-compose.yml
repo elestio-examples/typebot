@@ -31,6 +31,7 @@ services:
     environment:
       - POSTGRES_DB=typebot
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_HOST_AUTH_METHOD=trust      
   typebot-builder:
     image: baptistearno/typebot-builder:${SOFTWARE_VERSION_TAG}
     restart: always
