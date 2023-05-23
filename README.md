@@ -10,8 +10,7 @@ Deploy Typebot server with CI/CD on Elestio
 
 # Once deployed ...
 
-You can open Typebot UI here:
+You can open Typebot Builder UI here:
 
-    URL: https://[CI_CD_DOMAIN]
-    Login: root
-    password: [ADMIN_PASSWORD]
+    URL: https://[CI_CD_DOMAIN]:8443
+    Login: [ADMIN_EMAIL]
