@@ -79,3 +79,4 @@ webUI:
   - url: "https://[CI_CD_DOMAIN]:39533"
     label: "Minio Admin"
     login: "root"   
+    password: "[ADMIN_PASSWORD]"
