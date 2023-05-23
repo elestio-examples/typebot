@@ -15,6 +15,14 @@ ports:
     public: true
     path: "/"
     isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "9443"
+    targetPort: "9000"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
 environments:
   - key: "SOFTWARE_VERSION_TAG"
     value: "latest"
@@ -30,6 +38,8 @@ environments:
     value: "https://[CI_CD_DOMAIN]"
   - key: "NEXT_PUBLIC_VIEWER_URL"
     value: "https://[CI_CD_DOMAIN]:8443"
+  - key: "MINIO_ENDPOINT"
+    value: "[CI_CD_DOMAIN]:9443"
   - key: "ENCRYPTION_SECRET"
     value: "random_password-random_password-random_password"
   - key: "SMTP_HOST"
