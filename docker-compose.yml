@@ -45,7 +45,7 @@ services:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
       - NEXTAUTH_URL=${NEXTAUTH_URL}
       - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
-      - ENCRYPTION_SECRET=GgyjQyoIg0rgdsttXpeeV9bO0wYiuvSn
+      - ENCRYPTION_SECRET=SECRET_TO_CHANGE
       - ADMIN_EMAIL=${ADMIN_EMAIL}
       - SMTP_HOST=${SMTP_HOST}
       - SMTP_PORT=${SMTP_PORT}
@@ -67,7 +67,7 @@ services:
     environment:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
       - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
-      - ENCRYPTION_SECRET=GgyjQyoIg0rgdsttXpeeV9bO0wYiuvSn
+      - ENCRYPTION_SECRET=SECRET_TO_CHANGE
       - NEXTAUTH_URL=${NEXTAUTH_URL}
       - ADMIN_EMAIL=${ADMIN_EMAIL}
       - SMTP_HOST=${SMTP_HOST}
