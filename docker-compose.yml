@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   typebot-db:
     image: postgres:13
@@ -14,7 +14,7 @@ services:
     depends_on:
       - typebot-db
     ports:
-      - '172.17.0.1:8484:3000'
+      - "172.17.0.1:8484:3000"
     # extra_hosts:
     #   - 'host.docker.internal:host-gateway'
     # See https://docs.typebot.io/self-hosting/configuration/builder for more configuration options
@@ -22,17 +22,27 @@ services:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
       - NEXTAUTH_URL=${NEXTAUTH_URL}
       - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
-      - ENCRYPTION_SECRET=SECRET_TO_CHANGE
+      - ENCRYPTION_SECRET=GgyjQyoIg0rgdsttXpeeV9bO0wYiuvSn
       - ADMIN_EMAIL=${ADMIN_EMAIL}
       - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - NEXT_PUBLIC_SMTP_FROM=${NEXT_PUBLIC_SMTP_FROM}
+      - SMTP_SECURE=${SMTP_SECURE}
+      - SMTP_AUTH_DISABLED=${SMTP_AUTH_DISABLED}
   typebot-viewer:
     image: baptistearno/typebot-viewer:${SOFTWARE_VERSION_TAG}
     restart: always
     ports:
-      - '172.17.0.1:8585:3000'
+      - "172.17.0.1:8585:3000"
     # See https://docs.typebot.io/self-hosting/configuration/viewer for more configuration options
     environment:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@typebot-db:5432/typebot
       - NEXT_PUBLIC_VIEWER_URL=${NEXT_PUBLIC_VIEWER_URL}
-      - ENCRYPTION_SECRET=SECRET_TO_CHANGE
+      - ENCRYPTION_SECRET=GgyjQyoIg0rgdsttXpeeV9bO0wYiuvSn
       - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - NEXT_PUBLIC_SMTP_FROM=${NEXT_PUBLIC_SMTP_FROM}
+      - SMTP_SECURE=${SMTP_SECURE}
+      - SMTP_AUTH_DISABLED=${SMTP_AUTH_DISABLED}
