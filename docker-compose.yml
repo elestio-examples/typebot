@@ -53,9 +53,11 @@ services:
       - SMTP_SECURE=${SMTP_SECURE}
       - SMTP_AUTH_DISABLED=${SMTP_AUTH_DISABLED}
       - S3_ACCESS_KEY=minio
-      - S3_SECRET_KEY=minio123
+      - S3_SECRET_KEY=${ADMIN_PASSWORD}
       - S3_BUCKET=typebot
+      - S3_PORT=${MINIO_PORT}
       - S3_ENDPOINT=${MINIO_ENDPOINT}
+      - S3_SSL=true
   typebot-viewer:
     image: baptistearno/typebot-viewer:${SOFTWARE_VERSION_TAG}
     restart: always
@@ -74,6 +76,8 @@ services:
       - SMTP_SECURE=${SMTP_SECURE}
       - SMTP_AUTH_DISABLED=${SMTP_AUTH_DISABLED}
       - S3_ACCESS_KEY=minio
-      - S3_SECRET_KEY=minio123
+      - S3_SECRET_KEY=${ADMIN_PASSWORD}
       - S3_BUCKET=typebot
+      - S3_PORT=${MINIO_PORT}
       - S3_ENDPOINT=${MINIO_ENDPOINT}
+      - S3_SSL=true
