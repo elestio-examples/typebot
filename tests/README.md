@@ -87,7 +87,7 @@ Here are some example snippets to help you get started creating a container.
         environment:
         - POSTGRES_DB=typebot
         - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-        - POSTGRES_HOST_AUTH_METHOD=trust      
+        - POSTGRES_HOST_AUTH_METHOD=trust
     typebot-builder:
         image: elestio4test/typebot-builder:${SOFTWARE_VERSION_TAG}
         restart: always
@@ -147,7 +147,6 @@ Here are some example snippets to help you get started creating a container.
 | NEXTAUTH_URL           | http://yourdomain:8484 |
 | NEXT_PUBLIC_VIEWER_URL | http://yourdomain:8485 |
 | ADMIN_EMAIL            | admin@gmail.com        |
-
 
 # Maintenance
 
