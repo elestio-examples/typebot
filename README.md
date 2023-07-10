@@ -24,4 +24,4 @@ By default we set up a CNAME on elestio.app domain, but probably you will want t
 
     https://docs.elest.io/books/security/page/custom-domain-and-automated-encryption-ssltls
 
-***Step2:*** Update the environment variables to reflect your custom domain Open Elestio dashboard > Service overview > Click on the Update CONFIG button > Env tab there edit 'NEXTAUTH_URL',  'NEXT_PUBLIC_VIEWER_URL'  &  'MINIO_ENDPOINT' with your real domain and click the button 'Update & Restart'.
+***Step2:*** Update the environment variables to reflect your custom domain Open Elestio dashboard > Service overview > Click on the Update CONFIG button > Env tab there edit 'NEXTAUTH_URL', 'NEXT_PUBLIC_VIEWER_URL' & 'MINIO_ENDPOINT' with your real domain and click the button 'Update & Restart'.
