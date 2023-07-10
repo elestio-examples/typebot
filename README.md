@@ -14,3 +14,14 @@ You can open Typebot Builder UI here:
 
     URL: https://[CI_CD_DOMAIN]:8443
     Login: [ADMIN_EMAIL]
+
+
+# Custom domain instructions (IMPORTANT)
+
+By default we set up a CNAME on elestio.app domain, but probably you will want to have your own domain.
+
+***Step1:*** Add your domain in the Elestio dashboard as explained here:
+
+    https://docs.elest.io/books/security/page/custom-domain-and-automated-encryption-ssltls
+
+***Step2:*** Update the environment variables to reflect your custom domain Open Elestio dashboard > Service overview > Click on the Update CONFIG button > Env tab there edit 'NEXTAUTH_URL',  'NEXT_PUBLIC_VIEWER_URL'  &  'MINIO_ENDPOINT' with your real domain and click the button 'Update & Restart'.
