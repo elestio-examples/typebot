@@ -2,6 +2,7 @@ version: "3.3"
 services:
   minio:
     image: minio/minio
+    restart: always
     command: server /data
     ports:
       - "172.17.0.1:9000:9000"
