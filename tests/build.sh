@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-docker build . --tag elestio4test/typebot:latest
+docker buildx build . --output type=docker,name=elestio4test/typebot-builder:latest | docker load
+docker buildx build . --output type=docker,name=elestio4test/typebot-viewer:latest | docker load
