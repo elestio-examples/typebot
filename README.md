@@ -32,7 +32,7 @@ By default we set up a CNAME on elestio.app domain, but probably you will want t
 
 Adding keys for third-party integration like Giphy, Unsplash and others.
 
-Get your API keys from service providers like Giphy. To get your API key, register an account at developers.giphy.com.
+Get your API keys from service providers like Giphy. To get your API key, register an account at [developers.giphy.com](https://developers.giphy.com/).
 
 Now open Elestio dashboard > Service overview > Click on the Update CONFIG button > Docker compose tab there add -NEXT_PUBLIC_GIPHY_API_KEY=YOUR_GIPHY_KEY inside both builder and viewer container and click the button 'Update & Restart'
 
