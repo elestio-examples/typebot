@@ -24,7 +24,7 @@ services:
       exit 0;
       "
   typebot-db:
-    image: postgres:13
+    image: elestio4test/postgres:13
     restart: always
     volumes:
       - ./db_data:/var/lib/postgresql/data
