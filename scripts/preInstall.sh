@@ -11,3 +11,8 @@ chown -R 1001:1001 ./db_data;
 secret=$(openssl rand -base64 24 | tr -d '\n' ; echo)
 
 sed -i "s~SECRET_TO_CHANGE~${secret}~g" ./docker-compose.yml
+
+cat << EOT >> ./.env
+
+ENCRYPTION_SECRET=${secret}
+EOT
