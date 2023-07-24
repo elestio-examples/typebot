@@ -30,10 +30,14 @@ By default we set up a CNAME on elestio.app domain, but probably you will want t
 
 # Custom Configuration
 
-Adding keys for third-party integration like Giphy, Unsplash and others.
+Adding keys for third-party integration like Giphy, Unsplash, and others.
 
 Get your API keys from service providers like Giphy. To get your API key, register an account at [developers.giphy.com](https://developers.giphy.com/).
 
 Now open Elestio dashboard > Service overview > Click on the Update CONFIG button > Docker compose tab there add -NEXT_PUBLIC_GIPHY_API_KEY=YOUR_GIPHY_KEY inside both builder and viewer container and click the button 'Update & Restart'
 
 You may use the same procedure for additional resources, such as Unsplash, and follow the same steps to add NEXT_PUBLIC_UNSPLASH_ACCESS_KEY.
+
+If you want to configure General, Email (Auth, notifications), Google (Auth, Sheets, Fonts), GitHub, GitLab, and other features, you can learn more about setting your Typebot builder with custom configurations here: https://docs.typebot.io/self-hosting/configuration/builder.
+
+​​​​​​​Visit https://docs.typebot.io/editor/blocks/overview to learn more about editor settings including Google Sheets, Chatbot, Google Analytics, Open ai, and many others.
