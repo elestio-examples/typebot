@@ -80,7 +80,7 @@ Here are some example snippets to help you get started creating a container.
         exit 0;
         "
     typebot-db:
-        image: postgres:13
+        image: elestio/postgres:latest
         restart: always
         volumes:
         - ./db_data:/var/lib/postgresql/data
@@ -139,14 +139,23 @@ Here are some example snippets to help you get started creating a container.
         - S3_ENDPOINT=${MINIO_ENDPOINT}
         - S3_SSL=true
 
-
 ### Environment variables
 
-|        Variable        |     Value (example)    |
+|        Variable        |    Value (example)     |
 | :--------------------: | :--------------------: |
-| NEXTAUTH_URL           | http://yourdomain:8484 |
+|      NEXTAUTH_URL      | http://yourdomain:8484 |
 | NEXT_PUBLIC_VIEWER_URL | http://yourdomain:8485 |
-| ADMIN_EMAIL            | admin@gmail.com        |
+|      ADMIN_EMAIL       |    admin@gmail.com     |
+|     ADMIN_PASSWORD     |     your-password      |
+|   POSTGRES_PASSWORD    |     your-password      |
+|  SOFTWARE_VERSION_TAG  |         latest         |
+|       SMTP_HOST        |       your.host        |
+|       SMTP_PORT        |           25           |
+| NEXT_PUBLIC_SMTP_FROM  |    sender@mail.com     |
+|      SMTP_SECURE       |         false          |
+|   SMTP_AUTH_DISABLED   |         false          |
+|       MINIO_PORT       |         39533          |
+|     MINIO_ENDPOINT     |   http://minio:9000    |
 
 # Maintenance
 
