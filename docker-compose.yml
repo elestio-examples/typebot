@@ -25,7 +25,7 @@ services:
       exit 0;
       "
   typebot-db:
-    image: postgres:13
+    image: elestio/postgres:latest
     restart: always
     volumes:
       - ./db_data:/var/lib/postgresql/data
@@ -34,7 +34,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_HOST_AUTH_METHOD=trust
   typebot-builder:
-    image: baptistearno/typebot-builder:${SOFTWARE_VERSION_TAG}
+    image: elestio/typebot-builder:${SOFTWARE_VERSION_TAG}
     restart: always
     depends_on:
       - typebot-db
@@ -61,7 +61,7 @@ services:
       - S3_ENDPOINT=${MINIO_ENDPOINT}
       - S3_SSL=true
   typebot-viewer:
-    image: baptistearno/typebot-viewer:${SOFTWARE_VERSION_TAG}
+    image: elestio/typebot-viewer:${SOFTWARE_VERSION_TAG}
     restart: always
     ports:
       - "172.17.0.1:8585:3000"
