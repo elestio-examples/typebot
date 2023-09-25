@@ -18,7 +18,7 @@ You can open Typebot Builder UI here:
 
 # Custom domain instructions (IMPORTANT)
 
-By default we set up a CNAME on elestio.app domain, but probably you will want to have your own domain.
+By default, we set up a CNAME on elestio.app domain, but probably you will want to have your own domain.
 
 ***Step1:*** Add your domain in the Elestio dashboard as explained here:
 
@@ -38,6 +38,6 @@ Now open Elestio dashboard > Service overview > Click on the Update CONFIG but
 
 You may use the same procedure for additional resources, such as Unsplash, and follow the same steps to add NEXT_PUBLIC_UNSPLASH_ACCESS_KEY.
 
-If you want to configure General, Email (Auth, notifications), Google (Auth, Sheets, Fonts), GitHub, GitLab, and other features, you can learn more about setting your Typebot builder with custom configurations here: https://docs.typebot.io/self-hosting/configuration/builder.
+If you want to configure General, Email (Auth, notifications), Google (Auth, Sheets, Fonts), GitHub, GitLab, and other features, you can learn more about setting your Typebot builder with custom configurations here: https://docs.typebot.io/self-hosting/configuration.
 
-​​​​​​​Visit https://docs.typebot.io/editor/blocks/overview to learn more about editor settings including Google Sheets, Chatbot, Google Analytics, Open ai, and many others.
+​​​​​​​Visit https://docs.typebot.io/editor/blocks/overview to learn more about editor settings including Google Sheets, Chatbot, Google Analytics, Open AI, and many others.
