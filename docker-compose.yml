@@ -62,6 +62,7 @@ services:
       - S3_PORT=${MINIO_PORT}
       - S3_ENDPOINT=${MINIO_ENDPOINT}
       - S3_SSL=true
+      - DEFAULT_WORKSPACE_PLAN=UNLIMITED
   typebot-viewer:
     image: elestio/typebot-viewer:${SOFTWARE_VERSION_TAG}
     restart: always
